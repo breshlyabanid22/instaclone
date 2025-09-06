@@ -15,7 +15,7 @@ namespace InstagramClone.Models
         public string? ImageUrl { get; set; }
 
         [Required]
-        public DateTime TimeStamp { get; set; } = DateTime.UtcNow;
+        public DateTime TimeStamp { get; set    ; } = DateTime.UtcNow;
 
         [ForeignKey("User")]
         public int UserId { get; set; }

@@ -13,6 +13,7 @@ namespace InstagramClone.Models
         public required string Username { get; set; }
 
         public string? ProfilePictureUrl { get; set; }
+        public string? ProfileBannerUrl { get; set; }
 
         [DefaultValue("No bio")]
         public string? Bio { get; set; }
