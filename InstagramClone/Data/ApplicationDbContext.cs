@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using InstagramClone.Models
+using InstagramClone.Models;
 namespace InstagramClone.Data
 {
     public class ApplicationDbContext : DbContext
