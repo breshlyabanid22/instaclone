@@ -5,7 +5,8 @@ using System.ComponentModel.DataAnnotations;
 namespace InstagramClone.Models
 {
     public class User : IdentityUser
-    {   
+    {
+        public required string FullName { get; set; }
         public string? ProfilePictureUrl { get; set; }
         public string? ProfileBannerUrl { get; set; }
 

@@ -30,8 +30,9 @@ namespace InstagramClone.Controllers
             if (ModelState.IsValid)
             {
                 var user = new User
-                {
-                    UserName = model.UserName,
+                {   
+                    FullName = model.FullName,
+                    UserName = model.Email,
                     Email = model.Email,
                     Bio = model.Bio
 
@@ -42,7 +43,8 @@ namespace InstagramClone.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Login", "Account");
+                    TempData["SuccessMessage"] = "Registration successful!";
+                    return RedirectToAction("Index", "Home");
                 }
 
                 foreach(var error in result.Errors)
@@ -68,6 +70,7 @@ namespace InstagramClone.Controllers
 
                 if (result.Succeeded)
                 {
+                    TempData["SuccessMessage"] = "Login Successful!";
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError(string.Empty, "Invalid login attempt");

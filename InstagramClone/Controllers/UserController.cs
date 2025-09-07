@@ -23,7 +23,7 @@ namespace InstagramClone.Controllers
             //Find the user by username including their posts
             var user = await _context.Users
                 .Include(u => u.Posts)
-                .FirstOrDefaultAsync(u => u.UserName == id);
+                .FirstOrDefaultAsync(u => u.FullName == id);
 
             if(user == null)
             {

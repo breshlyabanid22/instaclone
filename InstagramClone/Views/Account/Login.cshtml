@@ -1,5 +1,48 @@
-﻿
-
+﻿@model InstagramClone.ViewModels.LoginViewModel;
 @{
     ViewData["Title"] = "Login";
+}
+
+<div class="container w-25 sm:mx-0 md:mx-auto mt-5 bg-white rounded-xl shadow-lg py-2 justify-content-center">
+    <h1 class="text-center font-bold text-xl my-3">Login</h1>
+    <hr />
+    <div class="mx-lg-3 py-3">
+        <form id="loginForm" asp-action="Login" method="post" class="gap-3 d-flex flex-column">
+            <div asp-validation-summary="ModelOnly" class="text-red-500"></div>
+                <div class="d-flex flex-column flex-grow-1">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-input w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            <div class="d-flex gap-xl-3">
+                <div class="d-flex flex-column flex-grow-1">
+                    <label asp-for="Password" class="form-input"></label>
+                    <input asp-for="Password" class="form-input w-full px-2 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="flex space-x-2 items-center">
+                <input asp-for="RememberMe" type="checkbox" class="size-4"/>
+                <label asp-for="RememberMe"></label>
+            </div>
+            <button id="registerButton" type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    @* <script>
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+        const form = this;
+        if(form.checkValidity() === false)
+        {
+            return;
+        }
+        const button = document.getElementById('registerButton');
+        button.disabled = true;
+        button.textContent = 'Creating Your Account...';
+        button.classList.add('opacity-50', 'cursor-not-allowed');
+        });
+    </script> *@
 }
