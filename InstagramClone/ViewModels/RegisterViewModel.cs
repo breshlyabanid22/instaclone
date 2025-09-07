@@ -4,7 +4,7 @@ namespace InstagramClone.ViewModels
 {
     public class RegisterViewModel
     {
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 50 characters.")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Username must be at least 3 characters.")]
         public required string UserName { get; set; }
 
         [Required]

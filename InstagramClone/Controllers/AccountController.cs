@@ -1,4 +1,5 @@
 ﻿using InstagramClone.Models;
+using InstagramClone.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,7 +42,7 @@ namespace InstagramClone.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Login", "Account");
                 }
 
                 foreach(var error in result.Errors)

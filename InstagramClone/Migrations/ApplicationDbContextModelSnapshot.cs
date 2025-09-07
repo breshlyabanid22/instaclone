@@ -42,7 +42,7 @@ namespace InstagramClone.Migrations
 
                     b.HasIndex("FollowerId");
 
-                    b.ToTable("Follows");
+                    b.ToTable("Follows", (string)null);
                 });
 
             modelBuilder.Entity("InstagramClone.Models.Post", b =>
@@ -71,7 +71,7 @@ namespace InstagramClone.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Posts", (string)null);
                 });
 
             modelBuilder.Entity("InstagramClone.Models.User", b =>
