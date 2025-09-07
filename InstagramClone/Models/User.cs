@@ -1,17 +1,11 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace InstagramClone.Models
 {
-    public class User
-    {
-        [Key]
-        public int UserId { get; set; }
-
-        [Required(ErrorMessage = "This field is required")]
-        [StringLength(50)]
-        public required string Username { get; set; }
-
+    public class User : IdentityUser
+    {   
         public string? ProfilePictureUrl { get; set; }
         public string? ProfileBannerUrl { get; set; }
 

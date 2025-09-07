@@ -7,11 +7,13 @@ namespace InstagramClone.Models
     {
         [Key]
         public int FollowId { get; set; }
+
+
         [ForeignKey("Follower")]
-        public int FollowerId { get; set; }
+        public string? FollowerId { get; set; }
 
         [ForeignKey("Followee")]
-        public int FolloweeId { get; set; }
+        public string? FolloweeId { get; set; }
 
         public virtual User? Follower { get; set; }
 
