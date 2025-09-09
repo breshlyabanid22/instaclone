@@ -10,6 +10,6 @@ namespace InstagramClone.ViewModels
         [DisplayName("Caption")]
         public required string Content { get; set; }
 
-        public string? ImageUrl { get; set; }
+        public IFormFile? ImageFile { get; set; }
     }
 }
