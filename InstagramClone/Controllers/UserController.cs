@@ -31,7 +31,7 @@ namespace InstagramClone.Controllers
             }
 
             //Order posts by creation date, most recent first
-            user.Posts = user.Posts?.OrderByDescending(p => p.TimeStamp).ToList();
+            user.Posts = user.Posts?.OrderByDescending(p => p.CreatedAt).ToList();
 
             return View(user);
         }

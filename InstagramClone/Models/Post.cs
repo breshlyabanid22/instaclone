@@ -5,8 +5,7 @@ namespace InstagramClone.Models
 {
     public class Post
     {
-        [Key]   
-        
+        [Key]
         public int PostId { get; set; }
 
         [Required]
@@ -15,7 +14,7 @@ namespace InstagramClone.Models
         public string? ImageUrl { get; set; }
 
         [Required]
-        public DateTime TimeStamp { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; }
 
         [ForeignKey("User")]
         public required string UserId { get; set; }
